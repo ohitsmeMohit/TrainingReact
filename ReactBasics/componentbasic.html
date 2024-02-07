@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .header {
+        border: 2px solid red;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.7.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.7.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <div class="app"></div>
+    <script type="text/jsx">
+        class Message extends React.Component{
+            render(){
+                return <h1>{this.props.message}</h1>
+            }
+        }
+
+
+      class BasicComponent extends React.Component{
+        render(){
+            // return React.createELement("h1", {}, "Componenet in React");
+            return <div><Message message = "Hwllkkkodo"/>
+                <Message message="Bye Bye"/></div>
+        }
+      }
+      // let basicCompInstance = BasicComponent(); Wrong Method
+       // let basicCompInstance = React.createElement(BasicComponent );
+
+      // let basicCompInstance = <div>
+         //    <BasicComponent message= "Helo from" />
+        // <BasicComponent message="Adios"/>
+        // <BasicComponent message ="Mashaallah"/>
+      // </div>;
+
+      let basicCompInstance = <div>
+        <BasicComponent />
+      </div>
+      ReactDOM.render(basicCompInstance, document.querySelector(".app"));
+    </script>
+  </body>
+</html>

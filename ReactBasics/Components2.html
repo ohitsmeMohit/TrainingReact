@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .header {
+        border: 2px solid red;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.7.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.7.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <div class="app"></div>
+    <script type="text/jsx">
+        class Message extends React.Component{
+            render(){
+                return <div>
+					
+					<h1>{this.props.message}</h1>
+						<strong>From: {this.props.from}</strong><br/>
+						<strong>To: {this.props.to}</strong><br/>
+						<img src={this.props.imageSrc} height="100px" width="100px"/>
+					</div>
+				
+
+            }
+        }
+
+
+      class BasicComponent extends React.Component{
+        render(){
+            return <div>
+                <Message message = "Helllllooooooooooooooooo"from="Made Over Chocolate Dipped Doughnuts" to="Bajaj" imageSrc="https://www.cookwithnabeela.com/wp-content/uploads/2023/06/ChocolateDippedDoughnuts.webp"/>
+			</div>
+        }
+      }
+      
+      let basicCompInstance = <div>
+        <BasicComponent Message/>
+      </div>
+      ReactDOM.render(basicCompInstance, document.querySelector(".app"));
+    </script>
+  </body>
+</html>
